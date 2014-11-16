@@ -1,0 +1,14 @@
+=== devFluid Twitter Puller Robot ===
+
+== How to Install & Run ==
+
+git clone https://github.com/satsukitv/devfluid-twitter-puller.git
+npm install
+
+Run robots.sql to create table to store data. Modify structure as needed.
+Create a mySQL user for the twitter robot.
+Create a developer profile, an app with a consumer key and secret.
+Get the access token and secret for the user you want to read tweets from.
+Edit config.js.dist to include all these keys, and rename to config.js.
+
+node twitter_puller.js

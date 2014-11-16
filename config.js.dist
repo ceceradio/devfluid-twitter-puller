@@ -1,0 +1,20 @@
+
+var config = {}
+
+config.twitterUser = 106606405; // which user id are we getting tweets from?
+config.twitter = {
+	consumer_key: 'CONSUMER_KEY',
+    consumer_secret: 'CONSUMER_SECRET',
+    access_token_key: 'ACCESS_TOKEN_FOR_USER_KEY',
+    access_token_secret: 'ACCESS_TOKEN_FOR_USER_SECRET'
+}
+
+config.mysql = {
+	host     : 'localhost',
+	user     : 'ROBOT_USERNAME',
+	password : 'ROBOT_PASSWORD',
+	database : 'DATABASE_NAME'
+}
+config.mySQLTable = 'robots';
+
+module.exports = config;
