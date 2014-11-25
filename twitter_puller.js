@@ -10,8 +10,8 @@ var path = require('path');
 
 var twitterUser = config.twitterUser;
 var maxCountPerRequest = 200;
-var gatherThisManyTweets = 1000;
-var maxRequestCount = 1;
+var gatherThisManyTweets = 600;
+var maxRequestCount = 5;
 
 var allTweets = [];
 
@@ -150,4 +150,8 @@ if (!String.prototype.trim) {
 
 console.log("Starting retrieval");
 getTweets();
-setInterval(getTweets,1000 * 60 * 60);
+setInterval(function() {
+	allTweets = [];
+	timesAccessed = 0;
+	getTweets();
+},1000 * 60 * 30);
