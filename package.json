@@ -12,6 +12,7 @@
 	"dependencies": {
 		"moment": "*",
 		"mysql": "*",
-		"twitter": "*"
+		"twitter": "*",
+		"he": "*"
 	}
 }
