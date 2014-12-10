@@ -4,6 +4,7 @@ var twit = new twitter(config.twitter);
 var mysql      = require('mysql');
 var connection = mysql.createConnection(config.mysql);
 var moment = require('moment');
+var he = require('he');
 
 var fs = require('fs');
 var path = require('path');
@@ -112,7 +113,7 @@ function wordCloud(callback) {
 		for (var i=0; i < allTweets.length; i++) {
 			console.log("Starting Tweet: "+i);
 			var tweet = allTweets[i];
-			var matches = tweet.text.trim().split(/\s+/);
+			var matches = he.decode(tweet.text).trim().split(/\s+/);
 			for (var j = 0; j < matches.length; j++) {
 				if (matches[j].indexOf("@")===0)
 					continue;
