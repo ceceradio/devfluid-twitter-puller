@@ -24,7 +24,8 @@ function getTweets(max_id) {
 	}
 	if (timesAccessed < maxRequestCount) {
 		timesAccessed++;
-		twit.get('/statuses/user_timeline.json', request, function(data) {
+		twit.get('/statuses/user_timeline.json', request, function(error, data, response) {
+            if (error) {console.log(error); return;}
 			if (typeof max_id != "undefined")
 				data.shift();
 			allTweets = allTweets.concat(data);
